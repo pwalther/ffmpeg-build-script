@@ -11,6 +11,8 @@ LDFLAGS="-L${WORKSPACE}/lib -lm"
 CFLAGS="-I${WORKSPACE}/include"
 PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig"
 
+echo "WORKSPACE: ${WORKSPACE}"
+
 # Speed up the process
 # Env Var NUMJOBS overrides automatic detection
 if [[ -n $NUMJOBS ]]; then
@@ -323,8 +325,11 @@ fi
 build "ffmpeg"
 download "http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2" "ffmpeg-snapshot.tar.bz2"
 cd $PACKAGES/ffmpeg-4.1 || exit
+
+cp /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
+
 ./configure \
-    --pkgconfigdir="$WORKSPACE/lib/pkgconfig:/usr/local/lib/pkgconfig" \
+    --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
     --prefix=${WORKSPACE} \
     --pkg-config-flags="--static" \
     --extra-cflags="-I$WORKSPACE/include" \
