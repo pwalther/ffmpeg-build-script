@@ -324,7 +324,7 @@ build "ffmpeg"
 download "http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2" "ffmpeg-snapshot.tar.bz2"
 cd $PACKAGES/ffmpeg-4.1 || exit
 ./configure \
-    --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
+    --pkgconfigdir="$WORKSPACE/lib/pkgconfig:/usr/local/lib/pkgconfig" \
     --prefix=${WORKSPACE} \
     --pkg-config-flags="--static" \
     --extra-cflags="-I$WORKSPACE/include" \
