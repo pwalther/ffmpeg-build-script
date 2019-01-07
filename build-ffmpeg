@@ -326,7 +326,8 @@ build "ffmpeg"
 download "http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2" "ffmpeg-snapshot.tar.bz2"
 cd $PACKAGES/ffmpeg-4.1 || exit
 
-cp /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
+echo "Copy pkconfig from cuda nv headers"
+cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 
 ./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
