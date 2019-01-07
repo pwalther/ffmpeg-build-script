@@ -394,6 +394,7 @@ echo ""
 echo "Building done. The binary can be found here: $WORKSPACE/bin/ffmpeg"
 echo ""
 
+ls -lah "$WORKSPACE/bin"
 
 if [[ $AUTOINSTALL == "yes" ]]; then
 	if command_exists "sudo"; then
