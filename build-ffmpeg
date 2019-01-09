@@ -329,7 +329,7 @@ cd $PACKAGES/ffmpeg-4.1 || exit
 echo "Copy pkconfig from cuda nv headers"
 cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 
-LDFLAGS="-static" ./configure \
+./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
     --prefix=${WORKSPACE} \
     --pkg-config-flags="--static" \
@@ -361,6 +361,7 @@ LDFLAGS="-static" ./configure \
 	--enable-nonfree --disable-shared \
 	--enable-nvenc --enable-cuda \
 	--enable-cuvid --enable-libnpp \
+	--enable-libnpp-static \
 	--extra-cflags=-I/usr/local/cuda/include \
 	--extra-cflags=-I/usr/local/include \
 	--extra-ldflags=-L/usr/local/cuda/lib64 \
