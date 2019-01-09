@@ -329,8 +329,7 @@ cd $PACKAGES/ffmpeg-4.1 || exit
 echo "Copy pkconfig from cuda nv headers"
 cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 
-./configure \
-    LDFLAGS="-static" \
+LDFLAGS="-static" ./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
     --prefix=${WORKSPACE} \
     --pkg-config-flags="--static" \
