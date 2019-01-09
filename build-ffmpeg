@@ -361,7 +361,6 @@ cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 	--enable-nonfree --disable-shared \
 	--enable-nvenc --enable-cuda \
 	--enable-cuvid --enable-libnpp \
-	--enable-libnpp-static \
 	--extra-cflags=-I/usr/local/cuda/include \
 	--extra-cflags=-I/usr/local/include \
 	--extra-ldflags=-L/usr/local/cuda/lib64 \
