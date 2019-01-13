@@ -329,7 +329,7 @@ cd $PACKAGES/ffmpeg-4.1 || exit
 echo "Copy pkconfig from cuda nv headers"
 cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 
-./configure \
+LDFLAGS="-static" ./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
     --prefix=${WORKSPACE} \
     --pkg-config-flags="--static" \
@@ -399,8 +399,6 @@ echo "Building done. The binary can be found here: $WORKSPACE/bin/ffmpeg"
 echo ""
 
 ls -la "$WORKSPACE/bin"
-
-ldd "$WORKSPACE/bin/ffmpeg"
 
 if [[ $AUTOINSTALL == "yes" ]]; then
 	if command_exists "sudo"; then
