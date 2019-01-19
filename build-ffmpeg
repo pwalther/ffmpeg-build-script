@@ -164,13 +164,11 @@ cd $PACKAGES/ffmpeg-4.1 || exit
 echo "Copy pkconfig from cuda nv headers"
 cp -v /usr/local/lib/pkgconfig/* $WORKSPACE/lib/pkgconfig/
 
-echo "/usr/local/cuda/lib64:"
-ls -lah /usr/local/cuda/lib64
+echo "/usr/local/cuda/include:"
+ls -lah /usr/local/cuda/include
 
 echo "/usr/local/cuda/lib64:"
 ls -lah /usr/local/cuda/lib64
-
-
 
 ./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
