@@ -206,6 +206,10 @@ ls -lah /usr/local/cuda/lib64/*
 	--enable-cuvid --enable-libnpp \
 	--extra-cflags=-I/usr/local/cuda/include \
 	--extra-cflags=-I/usr/local/include \
+	--extra-cflags=-L/usr/local/cuda/lib64 \
+	--extra-cflags=-L/usr/local/cuda/lib64/libnppc_static.a \
+	--extra-cflags=-L/usr/local/cuda/lib64/libnppidei_static.a \
+	--extra-cflags=-L/usr/local/cuda/lib64/libnppial_static.a \
 	--extra-ldflags=-L/usr/local/cuda/lib64 \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppc_static.a \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppidei_static.a \
