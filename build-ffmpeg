@@ -11,6 +11,8 @@ LDFLAGS="-L${WORKSPACE}/lib -lm"
 CFLAGS="-I${WORKSPACE}/include"
 PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig"
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+
 echo "WORKSPACE: ${WORKSPACE}"
 
 # Speed up the process
