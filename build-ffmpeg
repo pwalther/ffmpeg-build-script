@@ -171,6 +171,11 @@ ls -lah /usr/local/cuda/include/*
 echo "/usr/local/cuda/lib64:"
 ls -lah /usr/local/cuda/lib64/*
 
+echo "libnpp"
+ld -llibnpp --verbose
+
+echo "libnppc"
+ld -llibnppc --verbose
 
 ./configure \
     --pkgconfigdir="$WORKSPACE/lib/pkgconfig" \
