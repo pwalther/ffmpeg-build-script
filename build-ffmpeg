@@ -230,6 +230,8 @@ ld -llibnppc --verbose
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppc_static.a \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppidei_static.a \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppial_static.a \
+	--extra-ldflags=-lnppial_static -lnppc_static \
+	--extra-ldflags=-lnppial_static
 #	--extra-ldflags=-static \
 #	--extra-ldflags=-static-libgcc \
 #	--extra-ldflags=-static-libstdc++
