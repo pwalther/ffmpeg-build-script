@@ -20,7 +20,8 @@ ldconfig -v | grep -A 20 -B 20 npp
 ln -s $CUDA_LIB/libnppc_static.a /lib64/liblibnppc.a
 ln -s $CUDA_LIB/libnppidei_static.a /lib64/libnppidei.a
 ln -s $CUDA_LIB/lib64/libnppial_static.a /lib64/libnppia.a
-ln -s $CUDA_LIB/lib64/libnppial_static.a /lib64/libnppial.a
+ln -s $CUDA_LIB/lib64/libnppicc_static.a /lib64/libnppicc.a
+
 
 echo "WORKSPACE: ${WORKSPACE}"
 
@@ -229,9 +230,9 @@ ld -llibnppc --verbose
 	--extra-ldflags=-L/usr/local/cuda/lib64 \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppc_static.a \
 	--extra-ldflags=-L/usr/local/cuda/lib64/libnppidei_static.a \
-	--extra-ldflags=-L/usr/local/cuda/lib64/libnppial_static.a \
-	--extra-ldflags=-lnppial_static -lnppc_static \
-	--extra-ldflags=-lnppial_static
+	--extra-ldflags=-L/usr/local/cuda/lib64/libnppial_static.a
+#	--extra-ldflags=-lnppial_static -lnppc_static \
+#	--extra-ldflags=-lnppial_static
 #	--extra-ldflags=-static \
 #	--extra-ldflags=-static-libgcc \
 #	--extra-ldflags=-static-libstdc++
