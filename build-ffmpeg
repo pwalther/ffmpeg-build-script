@@ -275,6 +275,9 @@ echo ""
 
 ls -la "$WORKSPACE/bin"
 
+echo "ldd:"
+ldd "$WORKSPACE/bin/ffmpeg"
+
 if [[ $AUTOINSTALL == "yes" ]]; then
 	if command_exists "sudo"; then
 		sudo cp "$WORKSPACE/bin/ffmpeg" "$INSTALL_FOLDER/ffmpeg"
